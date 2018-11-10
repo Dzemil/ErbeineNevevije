@@ -18,14 +18,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.recycle_view);
-
         hadiths = new ArrayList<>();
-        Hadith hadith1 = new Hadith("Bosnian", "Arabic");
 
+        Hadith hadith1 = new Hadith("Hadith 1","Bosnian", "Arabic");
+        hadiths.add(hadith1);
+
+        recyclerView = findViewById(R.id.recycle_view);
         recyclerView.setHasFixedSize(true);
-        adapter = new MainAdapter(hadiths);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new MainAdapter(hadiths);
         recyclerView.setAdapter(adapter);
     }
 }
