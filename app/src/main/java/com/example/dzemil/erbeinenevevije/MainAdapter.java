@@ -10,9 +10,9 @@ import java.util.ArrayList;
 
 class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
-    ArrayList<String> hadiths;
+    private ArrayList<Hadith> hadiths;
 
-    public MainAdapter(ArrayList<String> hadiths) {
+    public MainAdapter(ArrayList<Hadith> hadiths) {
         this.hadiths = hadiths;
     }
 
@@ -24,7 +24,7 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(MainAdapter.ViewHolder viewHolder, int i) {
-        viewHolder.bosHadith.setText(hadiths.get(i));
+        viewHolder.hadithNumber.setText((CharSequence) hadiths.get(i));
     }
 
     @Override
@@ -34,12 +34,12 @@ class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView bosHadith;
+        public TextView hadithNumber;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            bosHadith = itemView.findViewById(R.id.bos_hadith);
+            hadithNumber = itemView.findViewById(R.id.hadith_number);
         }
     }
 }
